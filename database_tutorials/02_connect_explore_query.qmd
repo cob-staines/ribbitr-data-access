@@ -1,11 +1,12 @@
 ---
-title: "Database Training: Connect, Explore, Query the database"
+title: "Database Training: Explore the database"
 author: "Jake Eisaguirre & Cob Staines"
 format: html
-editor: visual
+editor: source
 ---
 
 # Database Training: Connect, Explore & Query
+
 ## A RIBBiTR Database tutorial
 
 ```{r}
@@ -64,6 +65,7 @@ error=function(coms) {
   message("Unable to connect: ", coms$message)
 })
 ```
+
 ## Explore the database
 
 ### Accessing database table metadata
@@ -81,8 +83,7 @@ sql_tables = dbGetQuery(dbcon, sql_tables_q)
 
 ### Accessing database column metadata
 
-A simple filter:
-Suppose that, after looking through the database tables, we are only interested in tables within the "survey_data" schema.
+A simple filter: Suppose that, after looking through the database tables, we are only interested in tables within the "survey_data" schema.
 
 ```{r}
 # using dbplyr
@@ -98,6 +99,7 @@ sql_columns = dbGetQuery(dbcon, sql_columns_q)
 ```
 
 ### Accessing data
+
 Having explored the table and column metadata from the survey_data schema, we are interested in taking a closer look at the data from the capture table.
 
 ```{r}
@@ -120,9 +122,5 @@ sql_capture = dbGetQuery(dbcon, sql_capture_q)
 ```
 
 ### Data chains function (in dev)
--one_link_up
--n_links_up
--to_table
--all_links_up
 
-
+-one_link_up -n_links_up -to_table -all_links_up
